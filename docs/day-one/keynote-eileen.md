@@ -1,0 +1,132 @@
+---
+sidebar_position: 1
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# Keynote
+
+## The Magic of Rails
+Exploring the principles & techniques behind the framework
+
+<Speaker
+  name='Eileen M. Uchitelle'
+  position='Rails Core Team | Senior Staff Engineer @ Shopify'
+  imageUrl='https://sessionize.com/image/0603-400o400o2-DcZeRc1f5jggZXcKhQkdBt.png'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/471435)
+
+[Slides](https://speakerdeck.com/eileencodes/the-magic-of-rails)
+
+## Attendees
+* All
+
+| Relvancy    | Interesting |
+| ----------- | ----------- |
+| 9           | 9           |
+
+## Notes
+
+Exploring the principles & techniques behind the framework.
+Works at Shopify
+
+Originally Tightly coupled. Clear lines between gems
+Active model only requires active support.
+
+### Tenants
+* Rails is modular but not fractured.
+* Rails is designed to have agnostic interfaces.
+* Rails  is extracted from applications.
+* Rails is made of simple and aesthetic APIs
+* Rails is a framework that takes on complexity to empower you
+
+### How Rails Components are structured.
+
+* Action Cable
+* Action Pack
+* Active Job
+* Active Storage
+* Action Mailbox
+* Action Text
+* Active Model
+* Active support
+* Action Mailer
+* Action View
+* Active Record
+* Railties
+
+Naming Convention
+Active vs Action?
+
+Active is backend behavior
+Action is user facing
+Frailties is the glue between them.
+
+### Architecture
+Architecture & Patterns of Rails components
+Architecture & Patterns the role of Railties
+
+Application -> Register hooks -> Load components -> Run hooks
+
+### Railties
+* Railties are the core of the framework
+* Railties control load order ad when hooks should be run
+* Enables components to work together without adding dependencies
+Look in the components railties for how it is configured.
+
+Architecture & Patterns Agnostic interfaces.
+```
+model ActiveRecord
+  module ConnectionAdapters
+    class AbstractAdapter
+    end
+  end
+end
+```
+Factory pattern with inheritance.
+Active storage does this too.
+Concrete should inherit from Abstract
+
+### Agnostic Interface
+* Consistent interface for all supported libraries
+* Simplifies Rails code to avoid using is_a
+* Makes it easy for apps to swap out adapters / services
+* Lowers the maintenance burden. They maintain the ones they are comfortable with and other can implement the rest
+
+### Metaprogramming
+
+Class eval.
+How does the has_many and belongs_to work?
+
+Find the implementation of a method.
+`post.method(:comments).source_location`
+`Post::generatedAssociationMethods`
+
+* Powerful tools enables us to build beautiful, simple APIs
+* Hides complexity from your application
+* Where “Rails Magic” comes from
+
+### Maintaining Rails
+Why I work on it
+
+* 2010: Introduced to Rails
+* 2011: Big Nerd Ranch
+* 2014: 1st conference. 1st contribution
+* 2015: First RailsConf
+* 2017 Join Rails Core
+* 2023 This RailsConf
+
+I work on Rails to advance the framework
+I work on Rails to ensure applications can stay on Rails
+I work on Rails to build a stronger community
+I work on Rails have an impact on the future
+
+### Rails is
+* Inspiring
+* Empowering
+* Imperfect
+* The applications we build
+* The team behind it
+* Community
+* Magic

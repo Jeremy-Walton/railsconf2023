@@ -1,0 +1,144 @@
+---
+sidebar_position: 2
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# The End of Legacy Code
+
+<Speaker
+  name='Daniel Huss'
+  position='Senior Software Consultant @ Test Double'
+  imageUrl='https://sessionize.com/image/e9f7-400o400o2-NpXpMe3oLCS2qEimk562L.jpg'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/453503)
+
+<!-- [Slides]() -->
+
+## Attendees
+* Jeremy
+
+| Relvancy    | Interesting |
+| ----------- | ----------- |
+| 5           | 7           |
+
+## Notes
+
+General Ideal is: The way we think about legacy code. How to influence our thinking in a positive way.
+Can we make everything we work on be fresh, new and exciting?
+
+### Legacy Code
+* Written {x} years ago
+* Older version of language / framework
+* Outdated paradigm
+* dusty, shadowy, those are the things that make us feel icky.
+
+#### “Legacy Code”
+Tightly Coupled, unclear, ew,bonkers, convoluted, Janky.
+It’s the feelings that are evoked.
+Code I Don’t like.
+
+### What drives this? Frustration and fear.
+
+#### Frustration
+* Unclear Composition
+* Inconsistent patterns
+* Convoluted Dependecies
+* Violates Conventions
+* Untested, Flakey
+
+#### Fear
+* Changes
+* New Requirements
+* Breaking Things
+* Being On Call
+* Risk, Harm
+
+### Progression of a Salty Mindset
+Wait? → Oof! → The heck? → Avoid → ^ → Garbage → Blame → Disgust
+The Burnout
+
+If you’re not part of the solution. Your not conducting yourself, like a professional.
+Doesn’t take much to spark something to help your team overcome these things.
+Someone who is rested, can lead the way, and others can draft like geese in a V.
+
+### Eternal Onboarding
+If only I could go back, knowing what I know now.
+If only I could go back without anything that I know now.
+
+### What does this code do?
+Team members have one idea
+Sales has another idea
+Logging or tracking give other insights
+
+100% Overlap in Understanding? How is team cohesion?
+
+### “Legacy Code”
+Has sole responsibility for things code has no right to be involved in.
+When we fail to understand and internalize code, the team suffers.
+Phonograph may feel antique, scratchy, old. But when paired with new music can produce a unique sound.
+
+* Express everything the app can do for customers
+* Distil 100`s to 1000s + hours
+* Reveal business goals and objectives
+* Limitations and pressures
+* Expressive domain knowledge
+* What’s valuable
+* Onboard Developers Into All That Stuff
+
+These are not the place for code, it’s the place for humans.
+How to bring these back to the human?
+* Lead with Curiosity
+* Explorer. What Why, who
+* Archaeologist. When people are gone.
+* Pay it Forward
+* Investor Self improving process
+* Put up Markers
+* Sherpa. Put up markers to the oasis and how things work
+
+### App Setup, Ew
+* Volume of services
+* Fragile dependencies
+* Access, secrets
+* Hard to see, heavily customized local dev
+* It’s just Big
+
+### App Setup, Improved
+* Easy to overlook
+* Kickstarts Salty Mindset
+* Project setup is ubiquitous
+
+### Onboarding?
+Easy Peasy. What else ya got?
+As requirements grow, the tests may grow and understanding may be harder to know.
+
+* Explorer
+* Ask people who know
+* Explore the code to understand
+* Archaeologists
+* Look at PRs or Trello or other task management
+* Investor
+* Is this code even useful?
+* Refactor?
+* Sherpa
+* Document
+
+### Tenacity For Engineering Problems
+* Tinker tinker tinker
+* Code gold and bikeshedding
+* Perfection paralysis
+
+### How to help draft and let others take point
+* Pairing
+* Tools - Git History, PR’s
+* PRs are for documentation. A.K.A me in ten years
+* Team Rituals
+* Retros, backlog processes
+* Social Strength. Build processes together
+* Going Boldly
+
+### Enabling Change
+* Take pressure off the code
+* Get knowledge out of our mind
+prepare us for the marathon.
