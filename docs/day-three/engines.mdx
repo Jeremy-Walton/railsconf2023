@@ -1,0 +1,46 @@
+---
+sidebar_position: 4
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# Using Rails Engines to Supercharge Your Team
+
+<Speaker
+  name='Austin Story'
+  position='Director, Infra Product Platform, Doximity'
+  imageUrl='https://sessionize.com/image/01be-400o400o2-UZsC7x13PGcwbyRmrSKrCQ.png'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/450255)
+
+## Attendees
+* Reed
+
+| Relvancy    | Interesting |
+| ----------- | ----------- |
+| 6           | 6           |
+
+## Notes
+
+Story of how Doximity used Rails engines to deploy a sophisticated application.
+* Gem is shared Ruby code
+* Engine integrates with Rails
+* GraphQL is a way to describe data, includes documentation, typed responses, safer changes, unified
+* Backend perspective – no internal standard, isolation harder, developer experience was atrocious
+* GraphQL Federation (app name) was the answer
+* Restored internal standards to backend, isolation, and improved developer experience
+* Started with Rails Guides documentation
+* Plan approach – setup engine, create GraphQL playground
+* Engine is a  mountable plugin
+* Focus heavily on dummy application provided as part of test harness
+* Make sure dummy app exposes every feature of engine so we don’t have to deploy engine to test changes
+* Mount controller action in engine’s internal routes
+* Inherit controller from ActionController::Base so that Application doesn’t impact engine
+* Includes Authentication by default because it’s not optional
+* Includes generators to make installing Engine easier
+* Includes RSpec helper
+* Includes ActiveSupport instrumentation
+* Integrated with CI to monitor schema changes
+* Includes Rake tasks
+* Uses Railties to provide Rake tasks and update Playground

@@ -1,0 +1,68 @@
+---
+sidebar_position: 1
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# Hotwiring My React Brain
+
+<Speaker
+  name='Aji Slater'
+  position='Development Team Lead, thoughtbot'
+  imageUrl='https://sessionize.com/image/76dc-400o400o2-VnhWEZS1XWen1q7qUPKYGV.jpg'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/453457)
+
+## Attendees
+* Jeremy
+* Reed
+
+| Relvancy    | Interesting |
+| ----------- | ----------- |
+| 9           | 5           |
+
+## Notes
+
+React patterns don’t work in Hotwire. Hotwire is the default front-end in Rails 7. Made up of Turbo and Stimulus. Single Page Application (SPA) is a broad term. Hotwire has the same feel. React’s mental model is a tree of components. Each element can render DOM elements. Data can only flow down the tree. Data flow is fundamental (“Data Down”). Network requests are irrelevant. A component gets some props and conditionally renders children. Forget that React makes network calls. Only way to return data back up the tree is actions (“Actions Up”). State changes cause updates.
+* Rails Guides site example
+  * Pages, Chapters, and Paragraphs
+  * Start as if there is no JS
+  * _navigation_frame.html.erb partial (in layout?)
+  * show.html.erb hold content
+  * In React, only way to another frame is back up the tree
+  * Make first request and receive Chapter 1
+  * Click link and turbo sends Chapter 2
+  * Turbo removes old turbo frame and updates the part that needs changing
+  * Apply turbo frame to pages region
+  * Data tells link to target a specific frame
+  * Turbo frame tag has option to set source path
+  * Adding live in-line editing
+  * Need to toggle between read and edit mode
+  * React uses local state and two components, one for each mode
+  * Hotwire starts with standard Rails controller
+  * Paragraphs are sent into Kramdown for Markdown rendering
+  * Move rendering to a partial and wrap it in turbo frame with dom_id
+  * Add link to RESTful edit route
+  * Closer we stick to convention the easier this will be
+  * Edit template is standard Rails form
+  * Hotwire opens possibilities without JS
+  * Stimulus adds interactivity
+  * Adding keydown listener
+  * Add data-controller to application layout body
+  * Same controller#action convention as Rails
+  * Modal wraps a Rails form with Stimulus attributes
+  * Response scoped to empty turbo frame
+* Watch Thoughtbot blog for updates to this talk
+
+### Resources
+
+[Hotwire on the thoughtbot Blog](https://thoughtbot.com/blog/tags/hotwire)
+
+[thoughtbot Hotwire Examples](https://github.com/thoughtbot/hotwire-example-template)
+
+[Hotrails Turbo Rails Tutorial](https://www.hotrails.dev/turbo-rails)
+
+[30 Days of Hotwire by @ilrock__ on Twitter](https://twitter.com/ilrock__/status/1631315562390519809)
+
+[Code Sample Image Tool](https://www.snappify.com)

@@ -1,0 +1,74 @@
+---
+sidebar_position: 5
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# Terms of Deployment: The Process of Evaluating Hatchbox, Fly, and Render for Developers
+
+<Speaker
+  name='Jordan Burke'
+  position='Senior Software Developer, Headway.io'
+  imageUrl='https://sessionize.com/image/24f6-400o400o2-TqR38gEhdq3CRfqCiZojra.jpeg'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/451079)
+
+[Slides](https://docs.google.com/presentation/d/1wWdGbIeq1QUtCXsd3aQD1DivLYiU887x-7kYL9s8xKo/edit#slide=id.g8b35d23502_0_217)
+
+## Attendees
+* Gary
+
+| Relvancy    | Interesting |
+| ----------- | ----------- |
+| ?           | ?           |
+
+## Notes
+
+jordan@headway.io
+
+* Headway (consultancy)
+* This talk is for deployment solutions for small teams & apps
+* Hatchbox
+  * By rails devs, for rails devs
+  * Convention over configuration
+  * Bring your own servers if you want
+  * Eg aws activate ($1k credits) + hatchbox
+  * Handles the configuration so you don't have to
+  * Rails only
+  * From GoRails
+  * You can do whatever you want, but rails conventions by default
+  * Automatic deploy via webhooks / github
+* Fly.io
+  * High availability servers that you put close to your users
+  * Bare-metal machines configured however you need
+  * Very responsive customer support
+  * Configurable environments with dockerfiles and customizable deploy process
+  * App-platform, not DB focused
+  * CLI command to deploy
+  * Can work with Github Actions for deployment
+* Render
+  * Very fast setup
+  * Cheapest of the 3
+  * Want to replace Heroku as your 1-stop shop for static sites, web apps, DBs, cron, etc.
+  * Priced as the lowest cost option
+  * Has free tier
+  * Automatic deploy via webhooks / github
+* Knowledge cost + technical cost + cost cost
+* Knowledge cost
+  * Who has the experience
+  * What are the pitfalls in getting up to speed on [x]?
+  * How hard is it to transfer knowledge to the client team?
+* Technical cost
+  * Is this the best use of the client's budget & trust?
+  * How much work is it to maintain the app on [x] host?
+  * How much work is needed to scale the product if it takes off?
+* Cost cost
+* MRSK is another option
+* Look for a blog post from these guys and a notion checklist to help you choose for your app
+* Heroku priced tiers haven’t changed, so really, for most clients, it works just as well as it did previously… its more of a psychological issue, wherein Heroku’s lack of free tier is an expression of a lack of commitment to give back to the community (hack-a-thons, training programs, etc), and that causes this author to want to look elsewhere.
+* Recommends Render for your next free-tier Rails training program (seems closest analog to Heroku free tier)
+* What would suggest you should shift from a managed db to an unmanaged db?
+  * Dedicated ops team
+  * Need to use extensions not supported by the host
+  * Foreign data wrappers

@@ -48,3 +48,17 @@ Here is an overview of the talks we attended.
 ### Day Two
 
 ### Day Three
+
+<Admonition type="danger" icon="" title={<a href="/docs/day-three/modular">Gradually Modularizing your Monolith with Ruby Packs and Packwerk</a>}>
+  <Speaker
+    name='Alex Evanczuk'
+    position='Product Infrastructure and Gradual Modularity Engineer at Gusto'
+    imageUrl='https://sessionize.com/image/bc47-400o400o2-RptoU3BoLgRtMRrqfmNozG.jpg'
+  />
+
+  <Speaker
+    name='Stephan Hagemann'
+    position='Leading Product Infrastructure Engineering at Gusto'
+    imageUrl='https://sessionize.com/image/aa19-400o400o2-sYhNc8LjRWWcunoZYU1nGJ.jpg'
+  />
+</Admonition>
