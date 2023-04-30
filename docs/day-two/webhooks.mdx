@@ -1,0 +1,66 @@
+---
+sidebar_position: 4
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# Catch Me If You Can: Learning to Process Webhooks in Your Rails App
+
+In this workshop, you’ll learn how to catch and process webhooks like a pro.
+
+<Speaker
+  name='Colin Loretz'
+  position='Senior Software Engineer at Orbit'
+  imageUrl='https://sessionize.com/image/b238-400o400o2-3XR9A4sGhZApiZ3xKKfav7.jpg'
+/>
+<Speaker
+  name='Chris Oliver'
+  position='Owner of GoRails'
+  imageUrl='https://sessionize.com/image/5bb3-400o400o2-BagGwXKP82tmypy9at4AkN.jpeg'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/453439)
+
+[Slides](https://github.com/colinloretz/railsconf-webhooks/blob/main/slides/railsconf.pdf)
+
+## Attendees
+* Jeremy
+
+| Relvancy    | Interesting |
+| ----------- | ----------- |
+| 4           | 5           |
+
+Was relevant but very basic.
+
+## Notes
+
+### Why Webhooks?
+Any service that wants to publish data to you rather than you reaching out.
+
+### GitHub Repo
+
+https://github.com/colinloretz/railsconf-webhooks
+
+Receive a POST request.
+
+CSRF tokens need to be ignored for inbound requests and use a different method to authenticate.
+
+*Return to the provider as soon as possible. Use background jobs or something since they will continue to send until they get a good response.*
+
+[Webhooks.fyi](https://webhooks.fyi/)
+
+Github sends pings. May want to add a before action to check that.
+
+Look at [rails/actionmailbox/app/models/action_mailbox at main · rails/rails · GitHub](https://github.com/rails/rails/blob/main/actionmailbox/app/models/action_mailbox)
+
+### Security
+
+* Verification methods
+	* TLS, Oath, Asymetric keys, HMAC
+* Replay Attacks
+* Dataless notifications
+
+The talk was very introductory as to how to process webhooks and structure your endpoints.
+Two main takeaways:
+* Look at how Rails does this for ActionMailBox and emulate that pattern (structure and strategy)
+* Capture the data in something like InboundWebhooks model and create background jobs to process them later (This is effectively Rails pattern). This means you can respond quickly to the hook and move potential bottlenecks from your controllers to your database.
