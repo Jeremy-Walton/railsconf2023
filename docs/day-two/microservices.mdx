@@ -1,0 +1,87 @@
+---
+sidebar_position: 10
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# Applying microservices patterns to a modular monolith
+
+Dealing with legacy monoliths can be challenging due to accumulated technical debt. When faced with this situation, we usually start looking at different strategies to solve this, like microservices, engines, and modularization, just to name a few.
+
+<Speaker
+  name='Guillermo Aguirre'
+  position='Senior Software Engineer @ Rootstrap'
+  imageUrl='https://sessionize.com/image/bb86-400o400o2-DRrD2o6Uf4YyEfNDeKAfzY.png'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/452737)
+
+## Attendees
+* Jeremy
+* Josh
+* Kyle
+
+| Relevancy    | Interesting |
+| -----------  | ----------- |
+| 7, 8         | 8, 9        |
+
+## Notes
+
+### His Journey
+Started 6 years ago.
+* MVPs
+* Big monoliths
+* Microservices
+
+#### Monolith
+* The good
+  * Widely used
+  * Nothing wrong with them
+* His experience
+  * Large god objects
+* The bad
+  * Long deployment times
+  * Tightly coupled code -> harder to maintain & extend
+#### Microservices
+* The good
+  * Smaller cohesive teams
+  * Distributed
+* His experience
+  * Data inconsistencies
+  * Hot-fix issues in production
+* The bad
+  * Significantly higher infrastructure complexity
+  * Distributed mess
+
+#### Modularization
+Shopify article on deconstructing the monolith.
+Monolith big ball of mud vs distributed ball of mud.
+
+#### Cross-pollination between architectures
+Leverage and reuse work from the micro services world into our modular app
+
+### Their Domain
+Problems when leaving one database.
+Local transactions are ensured by:
+* Atomocity - Lose this. Can't roll back things
+* Consistency -
+* Isolation
+* Durability
+
+#### Patterns
+Proven solutions to recurring problems
+* Transactional Outbox
+	* Atomically update state and publish events
+*
+
+### Pattern Explanations
+
+He moved fast through these. I didn't get a lot of notes.
+
+#### Microservices Patterns
+
+### Example App
+
+### Demo
+
+https://github.com/rootstrap/rails-modular-monolith-with-ddd/tree/saga-multi-dbs

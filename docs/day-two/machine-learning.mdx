@@ -1,0 +1,78 @@
+---
+sidebar_position: 11
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# Forecasting the Future: An Introduction to Machine Learning for Weather Prediction in Native Ruby
+
+Have you ever considered building a machine learning model in Ruby? It may surprise you to learn that you can train, build, and deploy ML models in Ruby. But what are the benefits of using Ruby over other languages?
+
+<Speaker
+  name='Landon Gray'
+  position='Test Double, Senior Software Consultant'
+  imageUrl='https://sessionize.com/image/2deb-400o400o2-7k8EG2iVBiPAeCcgv6f3n7.png'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/453582)
+
+[Slides](https://speakerdeck.com/thedayisntgray/an-introduction-to-machine-learning-for-weather-prediction-in-native-ruby)
+
+## Attendees
+* All
+
+| Relevancy    | Interesting |
+| -----------  | ----------- |
+| 4            | 5           |
+
+## Notes
+
+Ultimately this talk felt very incomplete and not relevant. It really just touched on a few ideas and showed some possibliities. It didn't really go into any depth on anything.
+
+Wants to do machine learning in ruby, not python.
+
+### Tools
+Jupyter Notebook + iruby
+Execute Ruby.
+Can do visualization using python.
+
+#### Libraries
+* `numo/narray` ->  Equivalent to python numpy ->  [GitHub - ruby-numo/numo-narray: Ruby/Numo::NArray - New NArray class library](https://github.com/ruby-numo/numo-narray)
+* `daru` -> Equivalent to python pandas ->  Data Frame ->  [GitHub - SciRuby/daru: Data Analysis in Ruby](https://github.com/SciRuby/daru)
+* `rumale` -> ML algorithms -> [GitHub - yoshoku/rumale: Rumale is a machine learning library in Ruby](https://github.com/yoshoku/rumale)
+
+### Problem
+Predict weather and max temp
+
+### Collect Data
+National Center for Environment Information has tons of weather data
+Weather data for the Atlanta airport.
+
+### Data Preparation
+Import into Jupyter notebook
+Duplicate, don't manipulate source
+
+Look at the top 5 values of each desired category.
+
+#### Clean up
+* Handling Missing values
+* Outliers
+* Malformed Data
+* Eliminate duplicate values
+80/20 rule.
+
+### Train Model
+Split the data set.
+* 80% is training
+  * Trains the model
+* 20% is testing
+  * Validates the training
+
+Linear regression - is an attempt to model the relationship between two variables by fitting
+`Y = mx + b`
+`f(x) = mx + b`
+
+Best fit line.
+
+### Make Predictions
+https://github.com/thedayisntgray/ForcastingTheFuture

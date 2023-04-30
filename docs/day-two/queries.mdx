@@ -1,0 +1,96 @@
+---
+sidebar_position: 8
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# A custom design pattern for building dynamic ActiveRecord queries
+
+The pain is familiar to long-time developers of enterprise Rails applications. Database queries through ActiveRecord are an essential part of our application. And making these queries performant, dynamic, and readable is hard.
+
+<Speaker
+  name='Justin Daniel'
+  position='Software Engineer with G2'
+  imageUrl='https://sessionize.com/image/97c9-400o400o2-MKkFVK1VvvDFy7KAueKMsY.png'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/453527)
+
+[Slides](https://docs.google.com/presentation/d/1o2icW9yPl0MYtFhojs_BOjXohOvQqg5Z4ABI9gAL9nI/edit#slide=id.p)
+
+## Attendees
+* Kyle
+* Reed
+* Gary
+
+| Relevancy    | Interesting |
+| ----------- | ----------- |
+| 8           | 9           |
+
+## Notes
+
+* Big Picture:
+  * Surface Data in Many Systems
+  * Filterable, Customizable
+  * Fast, Agile innovation
+* Acceptance Criteria
+  * Composable
+  * Maintainable
+  * Performant
+* Composable
+  * Legos
+  * Modular: shaped from smaller interchangeable parts
+  * Respond to logic & conditionals
+  * Return desired fields that might vary by filters selected
+* How to avoid messy composable queries?
+* OO programming for queries!
+* Alternatives?
+  * Raw SQL / Contacts
+    * Most performant
+    * Limited only by RDBMS
+    * No dependencies
+    * Poor readability
+    * Less maintainable
+    * Less composable
+    * Less linter help
+  * Vanilla Active Record
+    * Composable
+    * More readable
+    * Some complexity
+    * No conditional branching
+  * Arel Tables
+    * Deals with complex queries & branching
+    * Relational algebra is difficult to read
+    * Cannot express multiple concerns in a single node (higher level business logic)
+  * Custom design pattern w/ AR
+    * Highly composable
+    * Conditional branching support
+    * OO
+    * No complex library needed… you can take it & run
+  * Query Builder + Visitor Pattern (called “Builder” pattern)
+    * Wraps AR
+    * Query classes + Builders + Nodes
+    * Initial state
+  * Visitor pattern to delegate active record query to each node to continue to build up the state
+  * Reduce accumulates nodes and eliminates unnecessary ones via AR.merge(clause) over & over
+  * Eg query.merge(Campaign.where(title: title)) if names.present?
+  * Give the builder the nodes and let the nodes eliminates themselves
+  * A node can contain other nodes
+    * or/and where clauses
+    * CTE
+    * Subqueries
+    * Higher business logic
+  * Legendary characters (Veteran and Buff)
+  * Nesting of nodes
+    * Wheres operator with operator (and/or)
+  * Best Practices
+    * Encapsulate public interface of your query in a class
+      * 1 query class per API endpoint (eg IndexQuery)
+    * Make it modular
+      * Compose it of named classes that represent nodes
+    * Delegate to builders and nodes
+      * Move the bulk of you rlogic outside of the query class
+    * Make a builder that uses the visitor pattern
+      * Use a builder abstraction separate from your query class
+      * Query class should read descriptively
+  * Abstraction Frees our Code to Tell a Story

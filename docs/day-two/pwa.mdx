@@ -1,0 +1,124 @@
+---
+sidebar_position: 9
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# Building an offline experience with a Rails-powered PWA
+
+Progressive web applications (PWAs) allow us to provide rich offline experiences as native apps would, while still being easy to use and share, as web apps are.
+
+<Speaker
+  name='Alicia Rojas'
+  position='Software Developer at Telos Labs'
+  imageUrl='https://sessionize.com/image/e344-400o400o2-hLMBzgXgptTcbNESM5vRfr.jpg'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/452793)
+
+[Slides](https://docs.google.com/presentation/d/1CwWOAgrfNg3yR07EGAbYDxd50A0BovEtpkmofwN9fZQ/edit#slide=id.p)
+
+## Attendees
+* Jeremy
+* Josh
+
+| Relevancy    | Interesting |
+| ----------- | ----------- |
+| 5           | 4           |
+
+## Notes
+
+The first half of the talk covers the basics which we have implemented before, but the second half talks about caching and offline CRUD which may be useful.
+
+### What is a PWA and why the are great
+Progressive Web App
+Web apps that use service workers, manifests, and other features in combo with pgrowessive enhancement to give users an experience with native applications.
+They mix the bet of both native and web worlds.
+
+### Case study: Introducing the challenge and solution
+* Create an alpo that allows to perform CRUD actions in areas with low or no internet connections.
+* The has to be easy to use and share, and must work on mobile devices.
+
+#### Solution
+Rails + PWA
+
+The ingredients
+1. Service worker.
+	1. Is like a small application that runs in parallel to your Rails app, intercepting requests and providing capabilities like coaching assets and background sync.
+	2. Available at `/service-worker.js`
+	3. Your app should work even if the worker doesn’t
+2. App manifest
+	1. It will tell the browser how your PWA should display within the OS of the device. This file is key to make your app installable and thus to make it look and feel like a native app.
+	2. Available at `/manifest.json`
+
+### Setting up the main files required for PWAs
+
+1. Create a service worker controller
+2. Add routes
+3. Add files (service worker and manifest)
+4. Write companion JS and place It in the asset pipeline
+
+Can serve the files as views. `manifest.json.erb`
+Require the manifest in the application layout using a link
+
+Companion JS tells your application when and  from where to load your service worker.
+
+```
+// App/javascript/custom/companion.js
+If (navigator.serviceWorker) {
+  // Do stuff, register etc.
+}
+```
+
+### Caching and adding an offline fallback
+
+#### Workbox
+* Set of modules that simplify common service worker routing and caching
+* Workbox makes writing a service worker much easier.
+#### Workbox Strategies
+* Commonly used patterns to determine how the service worker will generate a response when a fetch event is received
+* The service worker handles the response by “routing” it to the particular strategy we want to use.
+
+#### Offline fallback
+Set up a catch handler.
+
+### Offline CRU(D) actions
+
+#### IndexedDB
+* Javascript API for managing a database of JSON objects in your browser
+* Relies heavily on Promises
+* Recommendation: use a wrapper!
+	* [Dexie.js - Minimalistic IndexedDB Wrapper](https://dexie.org/)
+#### Background Sync API
+Allows web applications to defer server synchronization.
+
+#### Store records in IndexedDB with Stimulus
+1. Check network status
+2. Declare database
+3. When submitting a form, if no network is available, store record in IndexedDB.
+Pro Tip: Use mixin.
+
+
+#### What if we want to enable manual synchronization?
+Failed Sync, or browser doesn’t support or is disabled.
+May want to allow users control over when the sync happens.
+
+#### How do we allow users to interact with app data when no internet?
+Server side rendering is out.
+Stimulus
+HTML templates are your friends. Use JS to
+Stimulus + Mustache to populate the template with IndexedDB.
+
+#### Gotchas
+* Validations in the front-end and backend must match, to ensure sync does not fail due to validation errors.
+* Understand your audience to assess the importance of browser compatibility for PWA capabilities (especially regarding iOS support)
+
+### Key takeaways and furthers challenges
+* PWA features can super-charge your app to make it suitable for everyone, everywhere.
+* We can make a great impact by reaching unconventional Audiences
+* Stimulus is a powerful tool for enhancing our app with offline features, emulating a SPA behavior with minimum JS.
+
+### Resources
+[Make your Rails app work offline (Part 1: PWA setup)](https://hi.teloslabs.co/post/make-your-rails-app-work-offline-part-1-pwa-setup)
+
+[Make your Rails app work offline (Part 2: caching assets and adding an offline fallback)](https://hi.teloslabs.co/post/make-your-rails-app-work-offline-part-2-caching-assets-and-adding-an-offline-fallback)
