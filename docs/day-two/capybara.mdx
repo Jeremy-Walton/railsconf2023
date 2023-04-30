@@ -1,0 +1,65 @@
+---
+sidebar_position: 7
+---
+
+import Speaker from '@site/src/components/Speaker';
+
+# Teaching Capybara Testing - An Illustrated Adventure
+
+100%! Red the lemur was so excited to have 100% test coverage, finally, after unit testing all of his Ruby code. With that, he was done, the code was tested, and he could call it a day.
+
+<Speaker
+  name='Brandon Weakver'
+  position='Principal Software Engineer at Gusto'
+  imageUrl='https://sessionize.com/image/be1f-400o400o2-SzF1P9Ved83qeNB4WR28Vs.jpeg'
+/>
+
+[Schedule Entry](https://railsconf2023.sessionize.com/session/447749)
+
+[Slides](https://docs.google.com/presentation/d/1wNz-retETR4ePVougmPW25EQGrre6cjOhUWv8edCv3s/edit#slide=id.p)
+
+## Attendees
+* Kyle
+* Reed
+
+| Relvancy    | Interesting |
+| ----------- | ----------- |
+| 9           | 6           |
+
+## Notes
+
+* Types of testing
+  * Unit, Integration, End-to-End (E2E)
+  * Unit - too tight, focused, too many stubs
+  * Integration - controllers with requests, models with db
+  * E2E - describe how application works from perspective of the user
+    * Possibly most important to the user
+    * Expensive, brittle
+* First E2E test
+  * Runs in RSpec
+  * Config in spec_helper
+  * Can use `binding.irb` to step through a test in headed mode (visible browser window)
+  * Email form input has an id called “login” so it doesn't work
+  * Screen-reader gets confused
+  * Accessible code is testable code
+  * REPL-driven development is helpful for things that are already built
+  * After writing spec, take out binding and run entire test
+* Into the Flow
+  * Test helper, factory
+  * Email shows up in header and main HTML elements
+  * Query like a person, not like a machine
+* On Brittleness
+  * A good capybara test won't break on a page change
+  * https://testing-library.com/docs/queries/about/#priority
+  * Accessible to everyone:
+    * By role - have_button, have_link
+    * By label - fill_in
+    * By placeholder - find_field
+    * By text - have_text
+    * By display value - find, have_css
+  * Semantic Queries
+    * By Alt Text - find img[alt=...], have_css
+    * By Title find role[title=...}
+  * Test IDs
+    * Recommended to use only when everything else fails
+    * Css class used specifically for testing
