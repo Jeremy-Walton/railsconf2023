@@ -13,7 +13,7 @@ Here is an overview of the talks we attended.
 
 ### Day One
 
-<Admonition type="danger" icon="" title={<a href="/docs/day-one/keynote-eileen">Opening Keynote: The Magic of Rails</a>}>
+<Admonition type="danger" title={<a href="/docs/day-one/keynote-eileen">Opening Keynote: The Magic of Rails</a>}>
   <Speaker
     name='Eileen M. Uchitelle'
     position='Rails Core Team | Senior Staff Engineer @ Shopify'
@@ -29,7 +29,7 @@ Here is an overview of the talks we attended.
   />
 </Admonition>
 
-<Admonition type="danger" icon="" title={<a href="/docs/day-one/cake">Rails as a piece of birthday cake</a>}>
+<Admonition type="danger" title={<a href="/docs/day-one/cake">Rails as a piece of birthday cake</a>}>
   <Speaker
     name='Vladimir Dementyev'
     position='Principal Engineer at Evil Martians'
@@ -47,9 +47,46 @@ Here is an overview of the talks we attended.
 
 ### Day Two
 
+<Admonition type="danger" icon="" title={<a href="/docs/day-two/mentoring">Building a more effective, bidirectional mentor-mentee relationship</a>}>
+  <Speaker
+    name='Andy Andrea'
+    position='Lead Software Developer at Panorama Education'
+    imageUrl='https://sessionize.com/image/7814-400o400o2-h259JgDfjtnHptzrfSUQCY.png'
+  />
+  <Speaker
+    name='William Frey'
+    position='Software Engineer I @ Beyond Finance'
+    imageUrl='https://sessionize.com/image/b406-400o400o2-UHwBetczDef9rVPfH9rTfz.jpeg'
+  />
+</Admonition>
+
+<Admonition type="danger" icon="" title={<a href="/docs/day-two/capybara">Teaching Capybara Testing - An Illustrated Adventure</a>}>
+  <Speaker
+    name='Brandon Weaver'
+    position='Principal Software Engineer at Gusto'
+    imageUrl='https://sessionize.com/image/be1f-400o400o2-SzF1P9Ved83qeNB4WR28Vs.jpeg'
+  />
+</Admonition>
+
+<Admonition type="danger" title={<a href="/docs/day-two/queries">A custom design pattern for building dynamic ActiveRecord queries</a>}>
+  <Speaker
+    name='Justin Daniel'
+    position='Software Engineer with G2'
+    imageUrl='https://sessionize.com/image/97c9-400o400o2-MKkFVK1VvvDFy7KAueKMsY.png'
+  />
+</Admonition>
+
+<Admonition type="danger" title={<a href="/docs/day-two/microservices">Applying microservices patterns to a modular monolith</a>}>
+  <Speaker
+    name='Guillermo Aguirre'
+    position='Senior Software Engineer @ Rootstrap'
+    imageUrl='https://sessionize.com/image/bb86-400o400o2-DRrD2o6Uf4YyEfNDeKAfzY.png'
+  />
+</Admonition>
+
 ### Day Three
 
-<Admonition type="danger" icon="" title={<a href="/docs/day-three/modular">Gradually Modularizing your Monolith with Ruby Packs and Packwerk</a>}>
+<Admonition type="danger" title={<a href="/docs/day-three/modular">Gradually Modularizing your Monolith with Ruby Packs and Packwerk</a>}>
   <Speaker
     name='Alex Evanczuk'
     position='Product Infrastructure and Gradual Modularity Engineer at Gusto'
