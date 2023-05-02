@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-export default function HomepageFeatures({ imageUrl, name, position }) {
+export default function Speaker({ imageUrl, name, position }) {
   return (
     <div className={styles.card}>
       <img src={imageUrl} className={styles.image} />
