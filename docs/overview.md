@@ -3,11 +3,16 @@ sidebar_position: 1
 ---
 
 import Speaker from '@site/src/components/Speaker';
+import Video from '@site/src/components/Video';
 import Admonition from '@theme/Admonition';
 
 # Overview
 
 Here is an overview of the talks we attended.
+
+## All Talks
+
+<Video src="https://www.youtube.com/embed/videoseries?list=PLbHJudTY1K0cOM1jfOsQLYPTLxQf1Ui1C" />
 
 ## Highlights
 
